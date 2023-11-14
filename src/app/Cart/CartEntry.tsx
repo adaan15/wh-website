@@ -8,7 +8,11 @@ import { useTransition } from "react";
 
 interface CartEntryProps {
   cartItem: CartItemWithProduct;
-  setProductQuantity: (productId: string, quantity: number) => Promise<void>;
+  setProductQuantity: (
+    productId: string,
+    quantity: number,
+    size: string
+  ) => Promise<void>;
 }
 
 export default function CartEntry({
@@ -50,7 +54,7 @@ export default function CartEntry({
               onChange={(e) => {
                 const newQuantity = parseInt(e.currentTarget.value);
                 startTransition(async () => {
-                  await setProductQuantity(product.id, newQuantity);
+                  await setProductQuantity(product.id, newQuantity, size);
                 });
               }}
             >
