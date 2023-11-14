@@ -105,6 +105,7 @@ export async function mergeAnonymousCartIntoUserCart(userId: string) {
           cartId: userCart.id,
           productId: item.productId,
           quantity: item.quantity,
+          size: item.size,
         })),
       });
     } else {
@@ -116,6 +117,7 @@ export async function mergeAnonymousCartIntoUserCart(userId: string) {
               data: localCart.items.map((item) => ({
                 productId: item.productId,
                 quantity: item.quantity,
+                size: item.size,
               })),
             },
           },
