@@ -30,7 +30,7 @@ export default function ProductCard({ product }: productcardprops) {
           {product.name + "  "}
           {isNew && <div className="badge badge-secondary">NEW!</div>}
         </h2>
-        <p>{product.description}</p>
+        <p className="display-linebreak">{product.description}</p>
         <div className="card-actions justify-end">
           <button className="btn btn-primary">Buy Now</button>
         </div>

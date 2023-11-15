@@ -19,6 +19,7 @@ export default function Cartlist({
         alt={product.name}
         width={200}
         height={200}
+        unoptimized
       />
       <div className="flex w-full flex-col px-4 py-4">
         <span className="font-semibold">{product.name}</span>

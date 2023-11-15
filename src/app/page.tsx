@@ -20,10 +20,11 @@ export default async function Home() {
             height={800}
             className="w-full max-w-sm rounded-lg shadow-2xl"
             priority
+            unoptimized
           />
           <div>
             <h1 className="text-5xl font-bold">{products[0].name}</h1>
-            <p className="py-6">{products[0].description}</p>
+            <p className="py-6 display-linebreak">{products[0].description}</p>
             <Link
               href={"/products/" + products[0].id}
               className="btn-primary btn"

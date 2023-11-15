@@ -38,6 +38,7 @@ export default function CartEntry({
           alt={product.name}
           width={200}
           height={200}
+          unoptimized
           className="rounded-lg"
         />
         <div>

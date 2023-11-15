@@ -33,10 +33,10 @@ export default async function Navbar() {
       <div className="flex-none gap-2 pr-3">
         <ShoppingCartButton cart={cart} />
         <form action={searchProducts}>
-          <div className="tabs tabs-boxed">
+          {/* <div className="tabs tabs-boxed">
             <a className="tab">Hoodie</a>
             <a className="tab tab-active">Sweatshirt</a>
-          </div>
+          </div> */}
         </form>
         <UserMenuButton session={session}></UserMenuButton>
       </div>
