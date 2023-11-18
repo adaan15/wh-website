@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import SessionProvider from "./sessionProvider";
-
 import "./globals.css";
 import "daisyui/dist/full.css";
 import Navbar from "./Navbar/navbar";
 import Footer from "./Footer";
+import Pixels from "../component/Pixels";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Pixels name="FACEBOOK_PIXEL_1" />
       <body className={inter.className}>
         <SessionProvider>
           <Navbar />
