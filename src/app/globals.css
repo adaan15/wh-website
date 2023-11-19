@@ -5,3 +5,7 @@
 .display-linebreak {
   white-space: pre-line;
 }
+.hideIframe {
+  display: none;
+  visibility: hidden;
+}

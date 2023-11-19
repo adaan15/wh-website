@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/next-script-for-ga */
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import SessionProvider from "./sessionProvider";
@@ -5,7 +6,6 @@ import "./globals.css";
 import "daisyui/dist/full.css";
 import Navbar from "./Navbar/navbar";
 import Footer from "./Footer";
-import Pixels from "../component/Pixels";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,8 +21,29 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function (w, d, s, l, i) {
+              w[l] = w[l] || [];
+              w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+              var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+              j.async = true;
+              j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+              f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-WG6V9SVG")`,
+          }}
+        ></script>
+      </head>
       <body className={inter.className}>
-        <Pixels name="FACEBOOK_PIXEL_1" />
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-WG6V9SVG"
+          height="0"
+          width="0"
+          className="hideIframe"
+        ></iframe>
         <SessionProvider>
           <Navbar />
           <main className="m-auto min-w-[300px] max-w-7xl p-4">{children}</main>
