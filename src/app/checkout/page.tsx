@@ -122,13 +122,13 @@ export default async function CheckoutPage() {
               <p className="text-slate-500 text-sm leading-6">
                 Delivery in every 7 Days
               </p>
-              <Image
+              {/* <Image
                 className="m-2 h-full w-96 rounded-md border object-fill object-center"
                 src="/photo_2023-11-20_20-10-07.jpg"
                 width={400}
                 height={200}
                 alt="bkash"
-              />
+              /> */}
             </div>
           </div>
         </div>
