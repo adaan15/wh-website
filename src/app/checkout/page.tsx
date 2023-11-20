@@ -5,7 +5,8 @@ import Cartlist from "./cartitem";
 import { formatPriceBDT } from "@/lib/format";
 import { PrismaClient } from "@prisma/client";
 import FormSubmitButton from "@/component/formsubmitbutton";
-// import CheckoutCreateArgs from "@prisma/client";
+import ShippingCharge from "@/component/ShippingCharge";
+import Image from "next/image";
 
 async function Checked() {
   const sess = await checkLoggedIn();
@@ -19,7 +20,7 @@ async function Checked() {
 const prisma = new PrismaClient();
 
 export default async function CheckoutPage() {
-  const delCharge = 50;
+  // const delCharge = 50;
 
   const session = await Checked();
   if (!session) {
@@ -119,8 +120,16 @@ export default async function CheckoutPage() {
                 Pathao Delivery Services
               </span>
               <p className="text-slate-500 text-sm leading-6">
-                Delivery in every 10 Days
+                Delivery in every 7 Days
               </p>
+              <Image
+                className="m-2 h-full w-96 rounded-md border object-fill object-center"
+                src="/photo_2023-11-20_20-10-07.jpg"
+                width={400}
+                height={200}
+                alt="bkash"
+                unoptimized
+              />
             </div>
           </div>
         </div>
@@ -221,19 +230,8 @@ export default async function CheckoutPage() {
                 {formatPriceBDT(Number(cart?.subtotal))}
               </p>
             </div>
-            <div className="flex items-center justify-between">
-              <p className="text-sm font-medium text-gray-900">Shipping</p>
-              <p className="font-semibold text-gray-900">
-                {formatPriceBDT(delCharge)}
-              </p>
-            </div>
           </div>
-          <div className="mt-6 flex items-center justify-between">
-            <p className="text-sm font-medium text-gray-900">Total</p>
-            <p className="text-2xl font-semibold text-gray-900">
-              {formatPriceBDT(Number(cart?.subtotal) + delCharge)}
-            </p>
-          </div>
+          <ShippingCharge subtotal={cart?.subtotal} />
 
           <FormSubmitButton
             className="btn btn-accent relative mb-4

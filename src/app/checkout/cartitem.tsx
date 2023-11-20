@@ -24,7 +24,7 @@ export default function Cartlist({
       <div className="flex w-full flex-col px-4 py-4">
         <span className="font-semibold">{product.name}</span>
         <span className="float-right text-gray-400"> Quantity: {quantity}</span>
-        <span className="float-right text-gray-400"> Quantity: {size}</span>
+        <span className="float-right text-gray-400"> Size: {size}</span>
         <p className="text-lg font-bold">
           Total: {formatPriceBDT(product.price * quantity)}
         </p>
