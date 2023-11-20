@@ -128,7 +128,6 @@ export default async function CheckoutPage() {
                 width={400}
                 height={200}
                 alt="bkash"
-                unoptimized
               />
             </div>
           </div>
