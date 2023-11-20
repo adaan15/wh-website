@@ -2,10 +2,14 @@
 import React, { useState } from "react";
 import { formatPriceBDT } from "@/lib/format";
 
-const ShippingCharge = ({ subtotal }) => {
+interface shippingprops {
+  subtotal: string;
+}
+
+const ShippingCharge = ({ subtotal }: shippingprops) => {
   const [shippingOption, setShippingOption] = useState("60"); // Default value for Inside Dhaka
 
-  const handleShippingChange = (e) => {
+  const handleShippingChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedOption = e.target.value;
     setShippingOption(selectedOption);
   };

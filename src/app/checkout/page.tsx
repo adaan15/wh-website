@@ -230,7 +230,7 @@ export default async function CheckoutPage() {
               </p>
             </div>
           </div>
-          <ShippingCharge subtotal={cart?.subtotal} />
+          <ShippingCharge subtotal={cart?.subtotal?.toString() ?? "0"} />
 
           <FormSubmitButton
             className="btn btn-accent relative mb-4
