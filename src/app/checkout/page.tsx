@@ -122,6 +122,10 @@ export default async function CheckoutPage() {
               <p className="text-slate-500 text-sm leading-6">
                 Delivery in every 7 Days
               </p>
+              <span className="mt-2 font-semibold">
+                You have to pay 50% of total to confirm th order. Scan the QR
+                code or make payment in this number.
+              </span>
               <Image
                 className="m-2 h-full w-96 rounded-md border object-fill object-center"
                 src="/photo_2023-11-20_20-10-07.jpg"
